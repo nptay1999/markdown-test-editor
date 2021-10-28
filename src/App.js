@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import MakedInput from "./components/makedInput"
+import Result from "./components/result"
+import EditorContextProvider from "./editorContext"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <EditorContextProvider>
+      <div className="App">
+        <h1>Makedown editor</h1>
+        <div className="editor">
+          <MakedInput />
+          <Result />
+        </div>
+      </div>
+    </EditorContextProvider>
+  )
 }
 
-export default App;
+export default App
